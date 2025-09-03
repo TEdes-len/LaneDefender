@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private void Shoot(InputAction.CallbackContext obj)
     {
         Instantiate(TankShot, transform.position, Quaternion.identity);
+        TankShot.transform.position = new Vector2(transform.position.x, transform.position.y + 1);
 
     }
 
