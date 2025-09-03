@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction fireAction;
+    public GameObject TankShot;
+    public float fireRate = 0.5f;
+    
 
 
 
@@ -23,6 +26,9 @@ public class PlayerController : MonoBehaviour
         moveAction.performed += MoveAction_performed;
         moveAction.canceled += MoveAction_performed;
         rb = GetComponent<Rigidbody2D>();
+        fireAction = playerInput.currentActionMap.FindAction("Fire");
+        fireAction.performed += Shoot;
+        
     }
 
     private void MoveAction_performed(InputAction.CallbackContext obj)
@@ -31,8 +37,9 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    private void Shoot()
+    private void Shoot(InputAction.CallbackContext obj)
     {
+        Instantiate(TankShot, transform.position, Quaternion.identity);
 
     }
 
