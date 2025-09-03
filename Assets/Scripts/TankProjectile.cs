@@ -12,6 +12,14 @@ public class TankProjectile : MonoBehaviour
          rb.linearVelocity = new Vector2(transform.position.x, projectileSpeed);
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            GetComponent<BoxCollider2D>().isTrigger = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
