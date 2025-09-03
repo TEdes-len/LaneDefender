@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private InputAction fireAction;
     public GameObject TankShot;
     public float fireRate = 0.5f;
+    public GameObject Barrel;
     
 
 
@@ -39,8 +40,8 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext obj)
     {
-        Instantiate(TankShot, transform.position, Quaternion.identity);
-        TankShot.transform.position = new Vector2(transform.position.x, transform.position.y + 1);
+        Instantiate(TankShot, Barrel.transform.position, Quaternion.identity);
+        
 
     }
 

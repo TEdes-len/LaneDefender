@@ -9,7 +9,7 @@ public class TankProjectile : MonoBehaviour
     void Start()
     {
        rb = gameObject.GetComponent<Rigidbody2D>();
-         rb.linearVelocity = new Vector2(transform.position.x, projectileSpeed);
+         rb.linearVelocity = new Vector2(projectileSpeed, 0);
     }
 
     private void OnTriggerExit2D(Collider2D other)
