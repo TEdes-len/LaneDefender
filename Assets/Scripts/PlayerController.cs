@@ -51,10 +51,23 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Die();
+        }
+    }
+
     private void FixedUpdate()
     {
        
         rb.linearVelocity = new Vector2(moveInput.x * 0, moveInput.y * speed);
 
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }
