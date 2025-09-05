@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerController : MonoBehaviour
 {
 
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public GameObject TankShot;
     public float fireRate = 0.5f;
     public GameObject Barrel;
+    private Animator FireExplosion;
     
 
 
@@ -29,7 +31,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         fireAction = playerInput.currentActionMap.FindAction("Fire");
         fireAction.performed += Shoot;
-        
+        FireExplosion = GetComponent<Animator>();
+
     }
 
     private void MoveAction_performed(InputAction.CallbackContext obj)
@@ -41,7 +44,8 @@ public class PlayerController : MonoBehaviour
     private void Shoot(InputAction.CallbackContext obj)
     {
         Instantiate(TankShot, Barrel.transform.position, Quaternion.identity);
-        
+        FireExplosion.SetTrigger("FireTrigger");
+
 
     }
 
