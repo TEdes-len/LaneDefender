@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
     private InputAction fireAction;
     public GameObject TankShot;
-    
+    [SerializeField] private float shootDelay = 1f;
+    private float shootTimer = 0f;
     public GameObject Barrel;
     private Animator FireExplosion;
 
@@ -32,8 +33,10 @@ public class PlayerController : MonoBehaviour
         moveAction.canceled += MoveAction_performed;
         rb = GetComponent<Rigidbody2D>();
         fireAction = playerInput.currentActionMap.FindAction("Fire");
-        fireAction.performed += Shoot;
+        fireAction.performed += PerformShoot;
+        fireAction.canceled += CancelShoot;
         FireExplosion = GetComponent<Animator>();
+        
 
     }
 
@@ -43,7 +46,7 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    public void Shoot(InputAction.CallbackContext obj)
+    public void Shoot()
     {
         Instantiate(TankShot, Barrel.transform.position, Quaternion.identity);
         FireExplosion.SetTrigger("FireTrigger");
@@ -51,9 +54,32 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void PerformShoot(InputAction.CallbackContext obj)
+    {
+        isShooting = true;
+    }
+
+    private void CancelShoot(InputAction.CallbackContext obj)
+    {
+        if (isShooting)
+        {
+            isShooting = false;
+        }
+
+    }
+
     void Update()
     {
         
+
+        shootTimer -= Time.deltaTime;
+        if (shootTimer <= 0f && isShooting)
+        {
+            Shoot();
+            
+            shootTimer = shootDelay;
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

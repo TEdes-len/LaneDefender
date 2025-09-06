@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   TankShot: {fileID: 3913760524730330858, guid: f2dc43714d878fd48a8d296d713d48d5, type: 3}
-  fireRate: 0.5
+  shootDelay: 0.81
   Barrel: {fileID: 4333608162654789283}
 --- !u!61 &4827887047549249719
 BoxCollider2D:
