@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     
     public GameObject Barrel;
     private Animator FireExplosion;
+
+    private bool isShooting;
     
 
 
@@ -46,10 +48,9 @@ public class PlayerController : MonoBehaviour
         Instantiate(TankShot, Barrel.transform.position, Quaternion.identity);
         FireExplosion.SetTrigger("FireTrigger");
 
-
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -65,7 +66,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
         rb.linearVelocity = new Vector2(moveInput.x * 0, moveInput.y * speed);
 
     }
