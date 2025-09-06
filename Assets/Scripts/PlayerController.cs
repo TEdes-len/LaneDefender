@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float shootTimer = 0f;
     public GameObject Barrel;
     private Animator FireExplosion;
-
+    [SerializeField] private GameManager gameManager;
     private bool isShooting;
     
 
@@ -86,7 +86,14 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Die();
+            gameManager.UpdateLivesText(-1);
+            if (gameManager.Lives <= 0)
+            {
+
+                
+            }
+           
+
         }
     }
 
@@ -98,6 +105,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+
         Destroy(gameObject);
     }
 }
