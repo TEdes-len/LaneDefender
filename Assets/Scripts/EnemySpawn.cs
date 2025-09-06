@@ -16,6 +16,10 @@ public class EnemySpawn : MonoBehaviour
     private void SpawnEnemy()
     {
         
+        var randomIndex = Random.Range(0, spawnPoints.Length);
+        var randomIndex2 = Random.Range(0, enemyPrefab.Length);
+        Instantiate(enemyPrefab[randomIndex2], spawnPoints[randomIndex].position, Quaternion.identity);
+
     }
 
     // Update is called once per frame
