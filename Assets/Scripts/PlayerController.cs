@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Barrel;
     private Animator FireExplosion;
 
-   
+    private bool isShooting;
     
 
 
@@ -43,9 +43,13 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    
+    public void Shoot(InputAction.CallbackContext obj)
+    {
+        Instantiate(TankShot, Barrel.transform.position, Quaternion.identity);
+        FireExplosion.SetTrigger("FireTrigger");
 
-    
+        
+    }
 
     void Update()
     {
