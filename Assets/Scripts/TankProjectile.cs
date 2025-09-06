@@ -5,6 +5,10 @@ public class TankProjectile : MonoBehaviour
 
     private int projectileSpeed = 10;
     private Rigidbody2D rb;
+    [SerializeField] public float fireRate = 0.5f;
+    [SerializeField] private float nextFire = 0.0f;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +27,6 @@ public class TankProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+     
     }
 }

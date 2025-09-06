@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 6fe6fcdbcb729264da33dd822781a1ef
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TankShot: {fileID: 3913760524730330858, guid: f2dc43714d878fd48a8d296d713d48d5, type: 3}
+  - Barrel: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

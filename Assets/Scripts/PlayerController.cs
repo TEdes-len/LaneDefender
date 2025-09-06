@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
     private InputAction fireAction;
     public GameObject TankShot;
-    public float fireRate = 0.5f;
+    
     public GameObject Barrel;
     private Animator FireExplosion;
     
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    private void Shoot(InputAction.CallbackContext obj)
+    public void Shoot(InputAction.CallbackContext obj)
     {
         Instantiate(TankShot, Barrel.transform.position, Quaternion.identity);
         FireExplosion.SetTrigger("FireTrigger");
