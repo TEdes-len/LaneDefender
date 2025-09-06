@@ -10,8 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text livesText;
     [SerializeField] private TMP_Text gameOverText;
-    private TMP_Text finalScoreText;
+     [SerializeField] private TMP_Text finalScoreText;
     [SerializeField] private PlayerController playerController;
+
 
     public int Lives
     {
@@ -54,7 +55,8 @@ public class GameManager : MonoBehaviour
     {
         playerController.Die();
         gameOverText.gameObject.SetActive(true);
-        finalScoreText = gameOverText.GetComponentInChildren<TMP_Text>();
+     
+
         finalScoreText.text = "Final Score: " + currentScore;
         Time.timeScale = 0f; // Pause the game
     }
