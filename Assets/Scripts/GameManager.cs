@@ -4,6 +4,10 @@ public class GameManager : MonoBehaviour
 {
 
     private int lives = 3;
+    
+    private int currentScore = 0;
+    [SerializeField] private Text scoreText;
+    [SerializeField] private Text livesText;
     public int Lives
     {
         get { return lives; }
