@@ -8,6 +8,10 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     public int health = 1; 
     private Animator animator;
+    [SerializeField] private float Destroydelay = 1f;
+    [SerializeField] private float Hitdelay = 0.5f;
+    private bool isHit = false;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,13 +26,14 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.tag == "Missile")
         {
             animator.SetTrigger("HitTrigger");
+            StartCoroutine(HitDelay());
             health -= 1;
             Destroy(other.gameObject);
             if (health <= 0)
             {
                 animator.SetTrigger("KillTrigger");
                 
-                Destroy(gameObject);
+                StartCoroutine(DestroyAfterAnimation());
             }
             
         }
@@ -40,8 +45,18 @@ public class EnemyController : MonoBehaviour
     private IEnumerator DestroyAfterAnimation()
     {
         // Wait for the animation to finish (assuming the animation length is 1 second)
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(Destroydelay);
         Destroy(gameObject);
+    }
+
+    private IEnumerator HitDelay()
+    {
+        isHit = true;
+        yield return new WaitForSeconds(Hitdelay);
+        isHit = false;
+
+
+
     }
 
 
@@ -54,6 +69,16 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(-speed, 0);
+        
+        if(!isHit)
+        {
+            rb.linearVelocity = new Vector2(-speed, 0);
+            
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(0, 0);
+        }
+
     }
 }

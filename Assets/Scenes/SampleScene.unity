@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 131221561}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.1794, y: -4.1888, z: 0.052504614}
+  m_LocalPosition: {x: 9.03, y: -4.65, z: 0.052504614}
   m_LocalScale: {x: 3.8993297, y: 3.148767, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131221561}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &131221564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,8 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ccf480b5c8434d95903dd1a5e730b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   health: 3
+  Destroydelay: 2
+  Hitdelay: 2
 --- !u!58 &131221565
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3764,14 +3766,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822211591}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -3782,7 +3784,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &822211593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3795,8 +3797,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ccf480b5c8434d95903dd1a5e730b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   health: 1
+  Destroydelay: 2
+  Hitdelay: 2
 --- !u!58 &822211594
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3897,7 +3901,7 @@ Transform:
   m_GameObject: {fileID: 822211591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.6552, y: -2.3565, z: 0.052504614}
+  m_LocalPosition: {x: 8.44, y: -0.6, z: 0.052504614}
   m_LocalScale: {x: 2.3982816, y: 2.6875916, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3999,14 +4003,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440399972}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -4017,7 +4021,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &1440399974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4030,8 +4034,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ccf480b5c8434d95903dd1a5e730b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   health: 1
+  Destroydelay: 2
+  Hitdelay: 2
 --- !u!58 &1440399975
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4132,7 +4138,7 @@ Transform:
   m_GameObject: {fileID: 1440399972}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2828, y: -3.6752, z: 0.052504614}
+  m_LocalPosition: {x: 9.05, y: -2.54, z: 0.052504614}
   m_LocalScale: {x: 4.21331, y: 3.5023296, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
