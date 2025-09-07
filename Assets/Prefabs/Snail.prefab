@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5.08
   health: 1
-  Destroydelay: 2
+  Destroydelay: 1
   Hitdelay: 2
   MissileExplosion: {fileID: 1724894160389252566, guid: c61d32ec69221c24b974d610b77b8d6e, type: 3}
 --- !u!50 &7195812096328881200
