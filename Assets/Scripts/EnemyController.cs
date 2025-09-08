@@ -12,8 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float Hitdelay = 0.5f;
     private bool isHit = false;
     public GameObject MissileExplosion;
-    public AudioClip EnemyHit;
-
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,7 +28,7 @@ public class EnemyController : MonoBehaviour
         {
             animator.SetTrigger("HitTrigger");
             Instantiate(MissileExplosion, other.GetContact(0).point, Quaternion.identity);
-            AudioSource.PlayClipAtPoint(EnemyHit, transform.position);
+            
 
             //Stop movement for a brief moment
             StartCoroutine(HitDelay());

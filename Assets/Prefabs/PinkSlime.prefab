@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ccf480b5c8434d95903dd1a5e730b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 3
+  speed: 3
+  health: 5
   Destroydelay: 2
   Hitdelay: 2
   MissileExplosion: {fileID: 1724894160389252566, guid: c61d32ec69221c24b974d610b77b8d6e, type: 3}

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
      [SerializeField] private TMP_Text finalScoreText;
     
     [SerializeField] private PlayerController playerController;
-    public AudioClip LifeLost;
+    
 
 
     public int Lives
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         Lives += liveschange;
         livesText.text = "Lives: " + lives;
-        AudioSource.PlayClipAtPoint(LifeLost, transform.position);
+        
 
 
         if (lives <= 0)
