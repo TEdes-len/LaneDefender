@@ -4685,6 +4685,7 @@ MonoBehaviour:
   gameOverText: {fileID: 1426732942}
   finalScoreText: {fileID: 1667479523}
   playerController: {fileID: 503756867}
+  LifeLost: {fileID: 0}
 --- !u!4 &1603832202
 Transform:
   m_ObjectHideFlags: 0

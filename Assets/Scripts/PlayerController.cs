@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
     private Animator FireExplosion;
     [SerializeField] private GameManager gameManager;
     private bool isShooting;
-    
+    public AudioClip PlayerHit;
+    public AudioClip TankShoot;
+
 
 
 
@@ -50,8 +52,9 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(TankShot, Barrel.transform.position, Quaternion.identity);
         FireExplosion.SetTrigger("FireTrigger");
+        AudioSource.PlayClipAtPoint(TankShoot, transform.position);
 
-        
+
     }
 
     public void PerformShoot(InputAction.CallbackContext obj)
@@ -95,6 +98,7 @@ public class PlayerController : MonoBehaviour
            
 
         }
+        AudioSource.PlayClipAtPoint(PlayerHit, transform.position);
     }
 
     private void FixedUpdate()
